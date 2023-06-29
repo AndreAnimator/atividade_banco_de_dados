@@ -11,14 +11,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestAttribute;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.meusgastos.domain.dto.UsuarioResponseDTO;
-import com.example.meusgastos.domain.model.Usuario;
 import com.example.meusgastos.domain.service.UsuarioService;
+import com.example.meusgastos.domain.dto.UsuarioRequestDTO;
+import com.example.meusgastos.domain.dto.UsuarioResponseDTO;
 
 @CrossOrigin("*")
 @RestController
@@ -40,13 +39,13 @@ public class UsuarioController {
     @PostMapping
     public ResponseEntity<UsuarioResponseDTO> cadastrar(@RequestBody UsuarioRequestDTO dto){
         UsuarioResponseDTO usuario = usuarioService.cadastrar(dto);
-        return new ResponseEntity<UsuarioReponseDTO>(usuario, HttpStatus.CREATED);
+        return new ResponseEntity<UsuarioResponseDTO>(usuario, HttpStatus.CREATED);
     }
 
     @PutMapping("/{id}")
     public ResponseEntity<UsuarioResponseDTO> atualizar(@PathVariable Long id, @RequestBody UsuarioRequestDTO dto){
         UsuarioResponseDTO usuario = usuarioService.atualizar(id, dto);
-        return new ResponseEntity<UsuarioReponseDTO>(usuario, HttpStatus.OK);
+        return new ResponseEntity<UsuarioResponseDTO>(usuario, HttpStatus.OK);
     }
 
     @DeleteMapping("/{id}")

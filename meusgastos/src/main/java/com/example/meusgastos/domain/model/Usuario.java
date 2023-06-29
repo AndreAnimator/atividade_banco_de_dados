@@ -4,8 +4,8 @@ import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetails;
+//import org.springframework.security.core.GrantedAuthority;
+//import org.springframework.security.core.userdetails.UserDetails;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -15,7 +15,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 
 @Entity
-public class Usuario implements UserDetails{
+public class Usuario /*implements UserDetails*/{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="idUsuario")
@@ -81,6 +81,7 @@ public class Usuario implements UserDetails{
     public void setTitulos(List<Titulo> titulos) {
         this.titulos = titulos;
     }
+    /*
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return null;
@@ -109,6 +110,6 @@ public class Usuario implements UserDetails{
     public boolean isEnabled() {
         return true;
     }
-
+    */
     
 }
