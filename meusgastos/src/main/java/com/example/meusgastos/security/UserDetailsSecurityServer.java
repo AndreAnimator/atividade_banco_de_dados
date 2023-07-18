@@ -23,7 +23,7 @@ public class UserDetailsSecurityServer implements UserDetailsService {
        if(optUsuario.isEmpty()){
         throw new UsernameNotFoundException("Usuário ou senha Inválidos.");
        }
-       return (UserDetails) optUsuario.get(); //fez um casting
+       return optUsuario.get(); //fez um casting
     }
     
 }

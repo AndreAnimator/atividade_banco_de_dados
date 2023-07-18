@@ -41,7 +41,7 @@ public class JwtAuthorizationFilter extends BasicAuthenticationFilter{
            // UsuarioResponseDTO usuarioResponseDTO = usuarioService.obterPorEmail(email);
            // Usuario usuario = mapper.map(usuarioResponseDTO, Usuario.class);
            Usuario usuario = (Usuario) userDetailsSecurityServer.loadUserByUsername(email);
-            return new UsernamePasswordAuthenticationToken(usuario, null); //removi o usuario.getAuthorities() dos parametros
+            return new UsernamePasswordAuthenticationToken(usuario, null, usuario.getAuthorities()); //removi o usuario.getAuthorities() dos parametros
         }
         return null;
     }
