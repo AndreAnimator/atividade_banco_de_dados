@@ -2,7 +2,7 @@ package com.example.meusgastos.domain.dto.centrodecusto;
 
 public class CentroDeCustoRequestDTO {
     private Long id;
-    private String decricao;
+    private String descricao;
     private String observacao;
     
     public Long getId() {
@@ -11,11 +11,11 @@ public class CentroDeCustoRequestDTO {
     public void setId(Long id) {
         this.id = id;
     }
-    public String getDecricao() {
-        return decricao;
+    public String getDescricao() {
+        return descricao;
     }
-    public void setDecricao(String decricao) {
-        this.decricao = decricao;
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
     }
     public String getObservacao() {
         return observacao;
