@@ -58,7 +58,6 @@ public class JwtAuthenticationFilter extends UsernamePasswordAuthenticationFilte
         UsuarioResponseDTO usuarioResponse = new UsuarioResponseDTO();
         usuarioResponse.setId(usuario.getId());
         usuarioResponse.setNome(usuario.getNome());
-        usuarioResponse.setFoto(usuario.getFoto());
         usuarioResponse.setDataCadastro(usuario.getDataCadastro());
         usuarioResponse.setDataInativacao(usuario.getDataInativacao());
         LoginResponseDTO loginResponseDTO = new LoginResponseDTO();

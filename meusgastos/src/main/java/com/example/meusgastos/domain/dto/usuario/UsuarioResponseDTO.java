@@ -7,7 +7,6 @@ public class UsuarioResponseDTO {
     private String nome;
     private String email;
     private String senha;
-    private String foto;
     private Date dataCadastro;
     private Date dataInativacao;
 
@@ -46,11 +45,5 @@ public class UsuarioResponseDTO {
     }
     public void setSenha(String senha) {
         this.senha = senha;
-    }
-    public String getFoto() {
-        return foto;
-    }
-    public void setFoto(String foto) {
-        this.foto = foto;
     }
 }
