@@ -2,7 +2,6 @@ package com.example.meusgastos.domain.model;
 
 import java.util.Collection;
 import java.util.Date;
-import java.util.List;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -12,7 +11,6 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
 
 @Entity
 public class Usuario implements UserDetails{
@@ -25,13 +23,9 @@ public class Usuario implements UserDetails{
     private String email;
     @Column(nullable=false)
     private String senha;
-    @Column(columnDefinition = "TEXT")
-    private String foto;
     @Column(nullable=false)
     private Date dataCadastro;
     private Date dataInativacao;
-    @OneToMany(mappedBy = "usuario")
-    private List<Titulo> titulos;
 
     public long getId() {
         return id;
@@ -57,12 +51,6 @@ public class Usuario implements UserDetails{
     public void setSenha(String senha) {
         this.senha = senha;
     }
-    public String getFoto() {
-        return foto;
-    }
-    public void setFoto(String foto) {
-        this.foto = foto;
-    }
     public Date getDataCadastro() {
         return dataCadastro;
     }
@@ -74,12 +62,6 @@ public class Usuario implements UserDetails{
     }
     public void setDataInativacao(Date dataInativacao) {
         this.dataInativacao = dataInativacao;
-    }
-    public List<Titulo> getTitulos() {
-        return titulos;
-    }
-    public void setTitulos(List<Titulo> titulos) {
-        this.titulos = titulos;
     }
 
     @Override

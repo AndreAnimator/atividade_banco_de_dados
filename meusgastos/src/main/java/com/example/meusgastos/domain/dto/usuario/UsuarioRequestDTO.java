@@ -4,7 +4,6 @@ public class UsuarioRequestDTO {
     private String nome;
     private String email;
     private String senha;
-    private String foto;
     
     public String getNome() {
         return nome;
@@ -23,11 +22,5 @@ public class UsuarioRequestDTO {
     }
     public void setSenha(String senha) {
         this.senha = senha;
-    }
-    public String getFoto() {
-        return foto;
-    }
-    public void setFoto(String foto) {
-        this.foto = foto;
     }
 }
